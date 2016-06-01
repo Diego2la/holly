@@ -12,6 +12,8 @@
 		DCC893291CFAE5A3001307D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC893271CFAE5A3001307D6 /* Main.storyboard */; };
 		DCC8932B1CFAE5A3001307D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC8932A1CFAE5A3001307D6 /* Assets.xcassets */; };
 		DCC8932E1CFAE5A3001307D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC8932C1CFAE5A3001307D6 /* LaunchScreen.storyboard */; };
+		DCC893391CFE4149001307D6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC893381CFE4149001307D6 /* AudioToolbox.framework */; };
+		DCC8933F1CFE4FAE001307D6 /* AveMaria.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCC8933E1CFE4FAE001307D6 /* AveMaria.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		DCC8932A1CFAE5A3001307D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCC8932D1CFAE5A3001307D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCC8932F1CFAE5A3001307D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCC893371CFE4148001307D6 /* Holly.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Holly.entitlements; sourceTree = "<group>"; };
+		DCC893381CFE4149001307D6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DCC8933E1CFE4FAE001307D6 /* AveMaria.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = AveMaria.mp3; path = ../AveMaria.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC893391CFE4149001307D6 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +44,7 @@
 		DCC893171CFAE5A2001307D6 = {
 			isa = PBXGroup;
 			children = (
+				DCC893381CFE4149001307D6 /* AudioToolbox.framework */,
 				DCC893221CFAE5A3001307D6 /* Holly */,
 				DCC893211CFAE5A3001307D6 /* Products */,
 			);
@@ -54,6 +61,8 @@
 		DCC893221CFAE5A3001307D6 /* Holly */ = {
 			isa = PBXGroup;
 			children = (
+				DCC893371CFE4148001307D6 /* Holly.entitlements */,
+				DCC8933E1CFE4FAE001307D6 /* AveMaria.mp3 */,
 				DCC893231CFAE5A3001307D6 /* AppDelegate.swift */,
 				DCC893251CFAE5A3001307D6 /* ViewController.swift */,
 				DCC893271CFAE5A3001307D6 /* Main.storyboard */,
@@ -96,6 +105,15 @@
 				TargetAttributes = {
 					DCC8931F1CFAE5A2001307D6 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 7Y58W53KVW;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -122,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC8933F1CFE4FAE001307D6 /* AveMaria.mp3 in Resources */,
 				DCC8932E1CFAE5A3001307D6 /* LaunchScreen.storyboard in Resources */,
 				DCC8932B1CFAE5A3001307D6 /* Assets.xcassets in Resources */,
 				DCC893291CFAE5A3001307D6 /* Main.storyboard in Resources */,
@@ -249,10 +268,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Holly/Holly.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Holly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.happyinside.Holly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -260,10 +284,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Holly/Holly.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Holly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.happyinside.Holly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
